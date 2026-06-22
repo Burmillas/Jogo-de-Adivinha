@@ -1,0 +1,180 @@
+:root {
+  --bg: #0f172a;
+  --card: #112240;
+  --card-alt: #1e293b;
+  --text: #e2e8f0;
+  --accent: #38bdf8;
+  --success: #22c55e;
+  --danger: #fb7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 35%),
+    linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  color: var(--text);
+}
+
+.game-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.top-bar {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.main-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0;
+  text-align: center;
+}
+
+#restart-button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#restart-button:hover {
+  background: rgba(56, 189, 248, 0.24);
+}
+
+.card-game {
+  width: 100%;
+  max-width: 500px;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.96);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+}
+
+.card-game h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  letter-spacing: 0.06em;
+}
+
+#feedback-message {
+  margin: 0 0 22px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: 2px solid rgba(56, 189, 248, 0.45);
+  outline-offset: 2px;
+}
+
+.input-group button {
+  min-width: 120px;
+  padding: 16px 18px;
+  border: none;
+  border-radius: 16px;
+  background: var(--accent);
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.input-group button:hover {
+  transform: translateY(-1px);
+  background: #7dd3fc;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.success-text {
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--success);
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 520px) {
+  .card-game {
+    padding: 22px;
+  }
+
+  .input-group {
+    grid-template-columns: 1fr;
+  }
+
+  .input-group button {
+    width: 100%;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-title {
+    text-align: left;
+  }
+}

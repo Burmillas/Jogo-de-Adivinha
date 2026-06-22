@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  
+    <title>Jogo de Adivinhação</title>
+  </head>
+  <body>
+    <div class="game-container">
+      <header class="top-bar">
+        <h1 class="main-title">Jogo de Adivinhação</h1>
+        <button id="restart-button" type="button">Reiniciar</button>
+      </header>
+
+      <div class="card-game">
+        <h2>ADIVINHE O NÚMERO</h2>
+        <p id="feedback-message">Digite um número de 1 a 100</p>
+
+        <div class="input-group">
+          <label for="user-guess" class="sr-only">Número</label>
+          <input type="number" id="user-guess" min="1" max="100" placeholder="Seu palpite" />
+          <button id="btn-action" type="button">Palpitar</button>
+        </div>
+
+        <div class="meta-row">
+          <span id="attempts">Tentativas: 0</span>
+          <span id="range-info">Intervalo: 1 - 100</span>
+        </div>
+
+        <p id="success-footer" class="success-text hidden">Você descobriu o número com sucesso!</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
